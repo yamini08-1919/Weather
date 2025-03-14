@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App BY Yamini Sai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="weather-input">
+            <div class="input-group">
+                <input type="text" id="userLocation" placeholder="Enter city">
+                <select class="converter" id="converter">
+                    <option value="°C">°C</option>
+                    <option value="°F">°F</option>
+                </select>
+                <i class="search-icon fa fa-search" onclick="findUserLocation()" id="search"></i>
+            </div>
+
+            <div class="weatherIcon"></div>
+            <h2 class="temperature"></h2>
+            <div class="feelsLike"></div>
+            <div class="description"></div>
+            <hr>
+            <div class="date"></div>
+            <div class="city"></div>
+        </div>
+
+        <div class="weather-output">
+            <h2 class="heading">Today's Highlights</h2>
+            <div class="highlights">
+                <div class="humidity">
+                    <i class="fa-solid fa-water"></i>
+                    <p>Humidity</p>
+                    <h1 id="HValue"></h1>
+                </div>
+
+                <div class="wind-speed">
+                    <i class="fa-solid fa-wind"></i>
+                    <p>Wind Speed</p>
+                    <h1 id="WValue"></h1>
+                </div>
+
+                <div class="pressure">
+                    <i class="fa-solid fa-volcano"></i>
+                    <p>Pressure</p>
+                    <h1 id="PValue"></h1>
+                </div>
+
+                <div class="sun">
+                    <span>
+                        <i class="fa-regular fa-sun"></i>
+                        <p>Sunset</p>
+                        <p id="SSValue"></p>
+                    </span>
+                    <span>
+                        <i class="fa-solid fa-sun"></i>
+                        <p>Sunrise</p>
+                        <p id="SRValue"></p>
+                    </span>
+                </div>
+
+                <div class="clouds">
+                    <i class="fa-solid fa-cloud"></i>
+                    <p>Clouds</p>
+                    <h1 id="CValue"></h1>
+                </div>
+
+                <div class="uv-index">
+                    <i class="fa-solid fa-bacon"></i>
+                    <p>UV-Index</p>
+                    <h1 id="UVValue"></h1>
+                </div>
+            </div>
+
+            <h2 class="heading">This Week</h2>
+            <div class="Forecast"></div>
+
+            <!-- Map Container -->
+            <h2 class="heading">Live Map</h2>
+            <div id="map" style="height: 400px; width: 100%; border-radius: 20px; margin-top: 1rem;"></div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>
